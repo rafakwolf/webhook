@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=development node --inspect src/index.js",
+    "test": "mocha ./test/**/*.test.js --exit"
   },
   "keywords": [
     "webhook",
@@ -14,6 +16,15 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "cross-env": "^7.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.0",
+    "sinon": "^9.2.0",
+    "swagger-jsdoc": "^4.3.1",
+    "swagger-ui-express": "^4.1.4"
   }
 }
